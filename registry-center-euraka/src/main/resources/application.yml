@@ -1,0 +1,16 @@
+server:
+  port: 8087
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: registry-center-euraka
+
+#日志配置
+logging:
+  level: info
+  level.com.se: info
+  path: /se/server/log/registry-center-euraka/
+  file: registry-center-euraka.log
+  config: classpath:my-logback.xml

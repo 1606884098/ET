@@ -6,21 +6,22 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>1.5.16.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.et.www</groupId>
+    <groupId>com.1024se.www</groupId>
     <artifactId>root</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
-    <name>et-root</name>
+    <name>root</name>
     <!--版本定义：继承此项目的jar版本定义都在这里，统一修改，统一使用-->
     <properties>
         <!--spring版本-->
-        <springboot.version>2.2.2.RELEASE</springboot.version>
+       <!-- <springboot.version>2.2.2.RELEASE</springboot.version>-->
+        <springboot.version>1.5.16.RELEASE</springboot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -49,6 +50,15 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <!--springboot2.2.2对应H版-->
+                <!--<version>Hoxton.SR1</version>-->
+                <version>Edgware.SR4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!-- 单独的dependencies标签（没有被dependencyManagement括起来）中申明的jar包：
@@ -63,7 +73,7 @@
     </dependencies>
 
 
-    <!-- 这个插件，可以将应用打包成一个可执行的jar包；-->
+    <!-- 这个插件，可以将spring应用打包成一个可执行的jar包；-->
     <build>
         <plugins>
             <plugin>
